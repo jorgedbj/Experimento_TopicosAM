@@ -50,11 +50,11 @@ y_test = np.arange(30)
 
 # Importacao das imagens do conjunto de treinamento
 for i in range(0, 120):
-    X_train[i] = misc.imread("/Users/JorgeJunior/Downloads/Dados-3/treino/" + str(i+1) + ".png", 1)
+    X_train[i] = misc.imread("<caminho até a pasta>/treino/" + str(i+1) + ".png", 1)
 
 # Importacao das imagens do conjunto de teste
 for i in range(0, 30):
-    X_test[i] = misc.imread("/Users/JorgeJunior/Downloads/Dados-3/teste/" + str(i+1) + ".png", 1)
+    X_test[i] = misc.imread("<caminho até a pasta>/teste/" + str(i+1) + ".png", 1)
 
 if K.image_data_format() == 'channels_first':
     X_train = X_train.reshape(X_train.shape[0], 1, img_rows, img_cols)
@@ -107,8 +107,4 @@ proba = model.predict_proba(X_test)
 print('Test score:', score[0])
 print('Test accuracy:', score[1])
 
-#target_names = ['config0', 'config1', 'config2', 'config3', 'config4', 'config5', 'config6', 'config7', 'config8', 'config9', 'config10',
-#                'config11', 'config12', 'config13', 'config14', 'config15', 'config16', 'config17', 'config18', 'config19', 'config20', 'config21',
-#                'config22', 'config23', 'config24', 'config25', 'config26', 'config27', 'config28', 'config29']
-#print(classification_report(np.argmax(Y_test,axis=1), classes,target_names=target_names))
 #print(confusion_matrix(np.argmax(Y_test,axis=1), classes))
